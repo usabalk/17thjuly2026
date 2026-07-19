@@ -1,0 +1,77 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "qaadf17thjuly"
+		},
+		"ls_destination_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_destination'"
+		},
+		"ls_source_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_source'"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://qakeyvault17.vault.azure.net/"
+		},
+		"ls_destination1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "sceretqa"
+		},
+		"ls_source1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "sceretqa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "qaadf17thjuly_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ls_destination_connectionString": {
+						"value": "[parameters('ls_destination_connectionString')]"
+					},
+					"ls_source_connectionString": {
+						"value": "[parameters('ls_source_connectionString')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"ls_destination1_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_destination1_properties_typeProperties_connectionString_secretName')]"
+					},
+					"ls_source1_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_source1_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
