@@ -1,0 +1,91 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "proudadf17thjuly"
+		},
+		"AzureKeyVault1_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://proudkeyvault17.vault.azure.net/"
+		},
+		"AzureKeyVault2_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://proudkeyvault17.vault.azure.net/"
+		},
+		"AzureKeyVault3_properties_typeProperties_baseUrl": {
+			"type": "string",
+			"defaultValue": "https://proudkeyvault17.vault.azure.net/"
+		},
+		"ls_destination_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "scretproud"
+		},
+		"ls_destination1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "sceretqa"
+		},
+		"ls_source_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "scretproud"
+		},
+		"ls_source1_properties_typeProperties_connectionString_secretName": {
+			"type": "string",
+			"defaultValue": "sceretqa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "proudadf17thjuly_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureKeyVault1_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault1_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault2_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault2_properties_typeProperties_baseUrl')]"
+					},
+					"AzureKeyVault3_properties_typeProperties_baseUrl": {
+						"value": "[parameters('AzureKeyVault3_properties_typeProperties_baseUrl')]"
+					},
+					"ls_destination_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_destination_properties_typeProperties_connectionString_secretName')]"
+					},
+					"ls_destination1_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_destination1_properties_typeProperties_connectionString_secretName')]"
+					},
+					"ls_source_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_source_properties_typeProperties_connectionString_secretName')]"
+					},
+					"ls_source1_properties_typeProperties_connectionString_secretName": {
+						"value": "[parameters('ls_source1_properties_typeProperties_connectionString_secretName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
