@@ -2,7 +2,7 @@
 	"name": "ds_destination",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_destination",
+			"referenceName": "ls_destination1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "output.csv",
-				"container": "testpipeline"
+				"container": "data"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

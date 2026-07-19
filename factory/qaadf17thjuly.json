@@ -1,0 +1,15 @@
+{
+	"name": "qaadf17thjuly",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "83d8ac12-a3c7-4a9f-9084-7ee7529c3be7",
+		"tenantId": "2c3d753e-1329-4616-833a-fb0eda20732c"
+	}
+}

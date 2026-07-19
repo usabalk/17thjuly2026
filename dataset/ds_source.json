@@ -2,7 +2,7 @@
 	"name": "ds_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_source",
+			"referenceName": "ls_source1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
