@@ -1,0 +1,20 @@
+{
+	"name": "ls_destination",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "ls_destination",
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"connectionString": {
+				"type": "AzureKeyVaultSecret",
+				"store": {
+					"referenceName": "AzureKeyVault1",
+					"type": "LinkedServiceReference"
+				},
+				"secretName": "sceretdev",
+				"secretVersion": "08275f857da842a7ac993294c8e30330"
+			}
+		}
+	}
+}

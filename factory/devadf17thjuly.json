@@ -1,0 +1,15 @@
+{
+	"name": "devadf17thjuly",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d1a37bf2-2e5a-4fa9-92d2-94b92410cb50",
+		"tenantId": "2c3d753e-1329-4616-833a-fb0eda20732c"
+	}
+}
