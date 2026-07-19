@@ -2,7 +2,7 @@
 	"name": "ds_source",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_source1",
+			"referenceName": "ls_source",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "ActivityLog01 (1).csv",
-				"container": "data"
+				"container": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",

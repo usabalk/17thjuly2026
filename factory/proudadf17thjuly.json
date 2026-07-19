@@ -1,0 +1,15 @@
+{
+	"name": "proudadf17thjuly",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "397c0629-cdeb-4013-87e2-638d3095fd68",
+		"tenantId": "2c3d753e-1329-4616-833a-fb0eda20732c"
+	}
+}

@@ -2,7 +2,7 @@
 	"name": "ds_destination",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_destination1",
+			"referenceName": "ls_destination",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,15 +10,60 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "output.csv",
-				"container": "data"
+				"fileName": "ActivityLog01 (1).csv",
+				"container": "source"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "Correlationid",
+				"type": "String"
+			},
+			{
+				"name": "Operationname",
+				"type": "String"
+			},
+			{
+				"name": "Status",
+				"type": "String"
+			},
+			{
+				"name": "Eventcategory",
+				"type": "String"
+			},
+			{
+				"name": "Level",
+				"type": "String"
+			},
+			{
+				"name": "Time",
+				"type": "String"
+			},
+			{
+				"name": "Subscription",
+				"type": "String"
+			},
+			{
+				"name": "Eventinitiatedby",
+				"type": "String"
+			},
+			{
+				"name": "Resourcetype",
+				"type": "String"
+			},
+			{
+				"name": "Resourcegroup",
+				"type": "String"
+			},
+			{
+				"name": "Resource",
+				"type": "String"
+			}
+		]
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

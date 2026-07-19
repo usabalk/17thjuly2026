@@ -1,7 +1,8 @@
 {
-	"name": "AzureKeyVault1",
+	"name": "AzureKeyVault3",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"description": "AzureKeyVault3",
 		"annotations": [],
 		"type": "AzureKeyVault",
 		"typeProperties": {
